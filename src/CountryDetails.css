@@ -1,0 +1,34 @@
+.border-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .border-buttons button {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+  .country-details-container {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .flag-container {
+    flex: 0 0 auto;
+    margin-right: 40px;
+  }
+  
+  .flag-image {
+    max-width: 400px;
+  }
+  
+  .details-container {
+    flex: 1 1 auto;
+  }
+  
+ 
+  
+  
