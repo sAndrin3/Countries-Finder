@@ -5,6 +5,7 @@ import CountryDetails from "./CountryDetails";
 import "./App.css";
 
 const App = () => {
+  // State variables
   const [countries, setCountries] = useState([]);
   const [filteredCountries, setFilteredCountries] = useState([]);
   const [theme, setTheme] = useState("light");
@@ -12,6 +13,7 @@ const App = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
+    // Fetch country data from API on component mount
     fetch("https://restcountries.com/v2/all")
       .then((response) => response.json())
       .then((data) => {
@@ -22,6 +24,7 @@ const App = () => {
   }, []);
 
   useEffect(() => {
+    // Trigger country filtering when selectedRegion or searchQuery changes
     filterCountries();
   }, [selectedRegion, searchQuery]);
 
@@ -30,23 +33,28 @@ const App = () => {
   };
 
   const handleRegionFilter = (event) => {
+    // Update selectedRegion based on the selected option in the filter dropdown
     setSelectedRegion(event.target.value);
   };
 
   const handleSearch = (event) => {
+    // Update searchQuery based on the entered search value
     setSearchQuery(event.target.value);
   };
 
   const filterCountries = () => {
+    // Filter countries based on selectedRegion and searchQuery
     let filtered = countries;
 
     if (selectedRegion !== "All") {
+      // Filter by region if a specific region is selected
       filtered = filtered.filter((country) =>
         country.region.toLowerCase().includes(selectedRegion.toLowerCase())
       );
     }
 
     if (searchQuery !== "") {
+      // Filter by country name if searchQuery is not empty
       filtered = filtered.filter((country) =>
         country.name.toLowerCase().includes(searchQuery.toLowerCase())
       );

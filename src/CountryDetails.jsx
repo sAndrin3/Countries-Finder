@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom"; // Extract the id parameter from the Url
 
 const CountryDetails = ({ countries }) => {
-  const { id } = useParams();
+  const { id } = useParams(); // id represents the alpha3code of a country
   const [country, setCountry] = useState(null);
 
   useEffect(() => {
+    // Find the country with matching alpha3Code
     const selectedCountry = countries.find(
       (country) => country.alpha3Code === id
     );
+    // Set the country in state
     setCountry(selectedCountry);
   }, [countries, id]);
 
   if (!country) {
+    // Display loading message if country is not yet fetched
     return <div>Loading...</div>;
   }
 
