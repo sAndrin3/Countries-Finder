@@ -51,20 +51,26 @@ const CountryDetails = ({ countries }) => {
       </div>
       <div className="details-container">
         <h2>{name}</h2>
-        <p>Native Name: {nativeName}</p>
-        <p>Population: {population}</p>
-        <p>Region: {region}</p>
-        <p>Sub Region: {subregion}</p>
-        <p>Capital: {capital}</p>
-        <p>Top Level Domain: {topLevelDomain}</p>
-        <p>
-          Currencies: {currencies.map((currency) => currency.name).join(", ")}
-        </p>
-        <p>
-          Languages: {languages.map((language) => language.name).join(", ")}
-        </p>
+        <div className="items-container">
+          <div className= "item1">
+          <p><strong>Native Name: </strong>{nativeName}</p>
+          <p><strong>Population: </strong>   {population}</p>
+          <p><strong>Region: </strong>  {region}</p>
+          <p><strong>Sub Region: </strong>  {subregion}</p>
+          <p><strong>Capital: </strong>  {capital}</p>
+          </div>
+          <div className="item2">
+            <p><strong>Top Level Domain: </strong>  {topLevelDomain}</p>
+            <p>
+              <strong>Currencies: </strong>  {currencies.map((currency) => currency.name).join(", ")}
+            </p>
+            <p>
+              <strong>Languages: </strong>  {languages.map((language) => language.name).join(", ")}
+            </p>
+          </div>
+        </div>
         <hr></hr>
-        <h6>Border Countries:</h6>
+        <h6><strong>Border Countries:</strong> </h6>
         <div className="border-buttons">
           {borders.map((border) => {
             const borderCountry = countries.find(

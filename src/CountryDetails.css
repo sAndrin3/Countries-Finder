@@ -43,6 +43,17 @@
   margin-left: 2rem;
 }
 
+.items-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns with equal width */
+  grid-gap: 10px; /* Gap between items */
+}
+
+.item1, .item2 {
+  text-align: left;
+}
+
+
 .details-container h2 {
   margin-top: 0;
 }
@@ -60,4 +71,5 @@
 .border-buttons button {
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
+  box-shadow: 20px 20px 50px 10px rgb(193, 192, 255) inset;;
 }
