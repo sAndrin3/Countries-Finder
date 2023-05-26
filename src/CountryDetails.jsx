@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import './CountryDetails.css'
+import {BsArrowLeft} from 'react-icons/Bs'
 
 const CountryDetails = ({ countries }) => {
   const { id } = useParams();
@@ -31,8 +34,19 @@ const CountryDetails = ({ countries }) => {
   } = country;
 
   return (
+    <div>
+      <div className="btn">
+  <button className="back-button">
+    <Link to="/">
+      <BsArrowLeft /> Back
+    </Link>
+  </button>
+</div>
+
     <div className="country-details-container">
+      
       <div className="flag-container">
+        
         <img src={flag} alt={`Flag of ${name}`} className="flag-image" />
       </div>
       <div className="details-container">
@@ -49,7 +63,8 @@ const CountryDetails = ({ countries }) => {
         <p>
           Languages: {languages.map((language) => language.name).join(", ")}
         </p>
-        <p>Border Countries:</p>
+        <hr></hr>
+        <h6>Border Countries:</h6>
         <div className="border-buttons">
           {borders.map((border) => {
             const borderCountry = countries.find(
@@ -63,6 +78,7 @@ const CountryDetails = ({ countries }) => {
           })}
         </div>
       </div>
+    </div>
     </div>
   );
 };
