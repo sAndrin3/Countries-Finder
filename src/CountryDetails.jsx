@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import './CountryDetails.css'
-import {BsArrowLeft} from 'react-icons/Bs'
+import {BsArrowLeft} from 'react-icons/bs'
 
 
 const CountryDetails = ({ countries }) => {
